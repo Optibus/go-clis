@@ -11,10 +11,8 @@ to let the developer know when to `pnpm instsll`
 Until we sign these clis with apple developer id,
 developers might need to build them locally
 
-## building
+## Building
 
-```sh
+```console
 make build
-```
-
 ```
