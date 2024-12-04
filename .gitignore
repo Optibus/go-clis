@@ -1,0 +1,17 @@
+# Ignore executables
+/bin/*
+
+# Ignore Go build cache
+Gopkg.lock
+Godeps/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore logs
+*.log
