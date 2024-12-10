@@ -12,6 +12,17 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/secretsmanager"
 )
 
+const (
+	Reset  = "\033[0m"
+	Red    = "\033[31m"
+	Green  = "\033[32m"
+	Yellow = "\033[33m"
+	Blue   = "\033[34m"
+	Purple = "\033[35m"
+	Cyan   = "\033[36m"
+	White  = "\033[37m"
+)
+
 func parseJSONString(jsonStr string) (map[string]string, error) {
 	var jsonData map[string]interface{}
 	err := json.Unmarshal([]byte(jsonStr), &jsonData)
@@ -56,6 +67,7 @@ func main() {
 
 	result, err := smClient.GetSecretValue(context.TODO(), input)
 	if err != nil {
+		log.Fatalf("%sYou might want to first login to aws, dont worry you wont need to do this very often.%s %v", Red, Reset, err)
 		log.Fatalf("Failed to get secret value: %v", err)
 	}
 
